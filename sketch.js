@@ -38,7 +38,7 @@ function setup()
 	textSize(fontSize);
 	textAlign(CENTER, CENTER);
 
-	type_value = 'On Decay';
+	type_value = 'Other Forms';
 	type_input = createInput('Type here...').attribute('maxlength', 11);
 	type_input.parent('typeInput');
 	type_input.input(typeChange);
@@ -77,7 +77,7 @@ function setup()
 function draw()
 {
 
-	background(59, 6, 1);
+	background(59, 16, 21);
 
 	drawBranch();
 
