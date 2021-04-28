@@ -11,7 +11,6 @@
 		<title>Other Forms—Live Prototype</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://use.typekit.net/yir1xiy.css">
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
@@ -19,9 +18,19 @@
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 
-	<div id="mainContainer">
+	<div id="message">
+		<p>Other Forms is a project that explores the generative potential of mold, rot, and decay through typographic form.</p>
 
-	<div id="paramContainer">
+		<p>Please expand your browser or visit the site on a larger device for the best experience.</p>
+	</div>
+
+
+
+
+
+
+
+	<div id="topContainer">
 
 	<div id="typeInput"></div>
 
@@ -29,25 +38,55 @@
 		<p id="growthTitle">Growth</p>
 	</div>
 
-	<div id="strokeButtons"></div>
-
-	</div>
-
-	<div id="infoContainer">
-
-		<a href="#" class="button">???</a>
-
-	</div>
-
 	</div>
 
 
 
 
 
+	<div id="bottomContainer">
 
+		<div id="strokeButtons">
+
+		</div>
+
+		<div id="aboutButtons"></div>
+
+	</div>
+
+
+
+
+
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+		<div id="about">
+		<p>Other Forms is a project that explores the generative potential of mold, rot, and decay through typographic form.</p>
+		<p>The current growth settings are inspired by <a id="slime_link" href="javascript:void(0)">slime mold</a>, <a href="javascript:void(0)">reindeer lichen</a>, and <a href="javascript:void(0)">coral fungus.</a></p>
+		</div>
+
+		<div id="photos">
+			<img id="slime" src="images/slime.jpg">
+			<img src="images/reindeer.jpg">
+			<img src="images/coral.jpg">
+		</div>
+
+		<div id="colophon">
+		<h2>Colophon</h2>
+		<ul>
+		<li><a href="https://compform.net/turtles/" target="_blank">Turtle.js Library</a>, Justin Bakse</li>
+		<li><a href="https://pangrampangram.com/products/formula-condensed" target="_blank">Formula Condensed</a>, Pangram Pangram</li>
+		<li><a href="https://pangrampangram.com/products/bitmap-fonts?variant=32840636858422" target="_blank">Mondwest</a>, Pangram Pangram</li>
+		</ul>
+		</div>
 
 		
+	  </div>
+	  
+
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 		<script src="turtle.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
 		<script src="script.js"></script>

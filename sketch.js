@@ -1,13 +1,7 @@
-// NOTES
+let formula;
+let textArray, textArray2;
 
-// add infobar with volt bg
-// add save button
-
-let mencken;
-let fontSize = 350;
-let decayArray, decayArray2;
-
-let save;
+let save, about;
 
 let type_input, type_value, type_width;
 
@@ -21,11 +15,15 @@ let s1 = 50
 let s2 = 100;
 let b1 = 70;
 let b2 = 80;
-let a1 = 1;
+let a1 = 0.5;
 let a2 = 1;
 
+let right = 20;
+let left = 15; 
+
+
 function preload() {
-	mencken = loadFont('fonts/mencken.otf');
+	formula = loadFont('fonts/formula.otf');
   }
 
 function setup() 
@@ -34,38 +32,39 @@ function setup()
 	createCanvas(windowWidth, windowHeight);
 	colorMode(HSB);
 
-	textFont(mencken);
-	textSize(fontSize);
-	textAlign(CENTER, CENTER);
-
 	type_value = 'Other Forms';
 	type_input = createInput('Type here...').attribute('maxlength', 11);
 	type_input.parent('typeInput');
 	type_input.input(typeChange);
 
 	save = createA('javascript:void(0)', 'Save');
-	save.parent('infoContainer');
-	save.class('button');
+	save.parent('aboutButtons');
+	save.class('button left');
 	save.mousePressed(saveImage);
+
+	about = createA('javascript:void(0)', 'About');
+	about.parent('aboutButtons');
+	about.class('button right');
+	about.mousePressed(openNav);
 
 	growth_value = 0.01;
 	growth_slider = createSlider(0.01, 0.4, 0.01, 0.01);
 	growth_slider.parent('growthSlider');
 	growth_slider.input(growthChange);
 
-	slime = createA('javascript:void(0)', 'Slime');
+	slime = createA('javascript:void(0)', 'Slime Mold');
 	slime.parent('strokeButtons');
-	slime.class('button');
+	slime.class('button left');
 	slime.mousePressed(slimeStroke);
 
-	cladonia = createA('javascript:void(0)', 'Cladonia');
+	cladonia = createA('javascript:void(0)', 'Reindeer Lichen');
 	cladonia.parent('strokeButtons');
-  	cladonia.class('button');
+  	cladonia.class('button middle');
 	cladonia.mousePressed(cladoniaStroke);
 
-	fungal = createA('javascript:void(0)', 'Fungus');
+	fungal = createA('javascript:void(0)', 'Coral Fungus');
 	fungal.parent('strokeButtons');
-	fungal.class('button');
+	fungal.class('button right');
 	fungal.mousePressed(fungalStroke);
 
 	myTurtle = new Turtle();
@@ -79,39 +78,51 @@ function draw()
 
 	background(59, 16, 21);
 
-	drawBranch();
+	drawText();
+
+	drawGrowth();
 
 }
 
-function drawBranch(){
+function drawText(){
 
-	type_width = textWidth(type_value)
+	const fontSize = windowWidth/4.4;
 
-	decayArray = mencken.textToPoints(type_value, windowWidth/2 - type_width/2, 700, fontSize, {sampleFactor: growth_value});
+	textFont(formula);
+	textSize(fontSize);
+	textAlign(CENTER, CENTER);
 
-	decayArray2 = mencken.textToPoints(type_value, windowWidth/2 - type_width/2, 700, fontSize, {sampleFactor: .25});
+	type_width = textWidth(type_value);
+
+	textArray = formula.textToPoints(type_value, windowWidth/2 - type_width/2, windowHeight/1.5, fontSize, {sampleFactor: growth_value});
+
+	textArray2 = formula.textToPoints(type_value, windowWidth/2 - type_width/2, windowHeight/1.5, fontSize, {sampleFactor: .25});
+
+
+}
+
+function drawGrowth(){
 
 	strokeWeight(1);
 
-	for(let i = 0; i < decayArray.length; i++){
+	for(let i = 0; i < textArray.length; i++){
 
 		myTurtle.penUp();
-		myTurtle.moveTo(decayArray[i].x, decayArray[i].y);
-		//myTurtle.turnTo(-90);
+		myTurtle.moveTo(textArray[i].x, textArray[i].y);
 		myTurtle.penDown();
 
 		stroke(random(h1, h2), random(s1, s2), random(b1, b2), random(a1, a2));
 	
-		stepBranch(4, i);
+		stepGrowth(4, i);
 	}
 
 	beginShape();
 
-	for(let i = 0; i < decayArray2.length; i++){
+	for(let i = 0; i < textArray2.length; i++){
 
 		stroke(random(h1, h2), random(s1, s2), random(b1, b2), random(a1, a2));
 
-		ellipse(decayArray2[i].x + (noise(i * .2) * 5), decayArray2[i].y + (noise(i * .2) * 5), 1, 1);
+		ellipse(textArray2[i].x + (noise(i * .2) * 5), textArray2[i].y + (noise(i * .2) * 5), 1, 1);
 
 	}
 
@@ -119,10 +130,8 @@ function drawBranch(){
 
 }
 
-function stepBranch(length, i) {
+function stepGrowth(length, i) {
 
-	let right = 20;
-	let left = 15;
 	let adj = random(0.7, 0.9);
 
 	if (length < 3) {
@@ -132,18 +141,18 @@ function stepBranch(length, i) {
 	myTurtle.moveForward(length);
 	myTurtle.moveForward(length);
 	myTurtle.turnRight(PI * random(-1, 1));
-	stepBranch(length * adj);
+	stepGrowth(length * adj);
 
 	myTurtle.pushState();
 
 	myTurtle.turnRight(right * noise(i * .01));
 	myTurtle.moveForward(length);
-	stepBranch(length * adj);
+	stepGrowth(length * adj);
 
 	myTurtle.popState();
 
 	myTurtle.turnLeft(left);
-	stepBranch(length * adj);
+	stepGrowth(length * adj);
 
 	myTurtle.pushState();
 
@@ -151,7 +160,7 @@ function stepBranch(length, i) {
 	myTurtle.moveForward(length);
 	myTurtle.turnRight(right);
 	myTurtle.turnRight(right);
-	stepBranch(length * adj);
+	stepGrowth(length * adj);
 
 	myTurtle.popState();
 
@@ -161,7 +170,7 @@ function stepBranch(length, i) {
 	myTurtle.moveForward(length);
 	myTurtle.turnLeft(left);
 	myTurtle.turnLeft(left);
-	stepBranch(length * adj);
+	stepGrowth(length * adj);
 
 	myTurtle.popState();
 
@@ -171,11 +180,12 @@ function stepBranch(length, i) {
 	myTurtle.turnLeft(left);
 	myTurtle.turnLeft(left);
 	
-	stepBranch(length * adj);
+	stepGrowth(length * adj);
 
 	myTurtle.popState();
 
 }
+
 
 function typeChange() {
 	type_value = type_input.value();
@@ -199,8 +209,11 @@ function growthChange() {
 	s2 = 100;
 	b1 = 70;
 	b2 = 80;
-	a1 = 1;
+	a1 = 0.5;
 	a2 = 1;
+
+	right = 20;
+	left = 15;
 
 	draw();
 
@@ -218,6 +231,9 @@ function growthChange() {
 	a1 = 0.1;
 	a2 = 1;
 
+	right = 180;
+	left = 10;
+
 	draw();
 
   }
@@ -233,6 +249,9 @@ function growthChange() {
 	a1 = 0.5;
 	a2 = 1;
 
+	right = 60;
+	left = 7;
+
 	draw();
 
   }
@@ -244,6 +263,6 @@ function windowResized(){
 
 function saveImage(){
 
-	saveCanvas('decay', 'png');
+	saveCanvas('another-form', 'png');
 
 }
