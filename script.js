@@ -1,6 +1,9 @@
 let links = document.querySelectorAll('#about a');
 let images = document.querySelectorAll('#photos img');
 
+let growthRange = document.querySelector('range');
+
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "35%";
   }
@@ -18,3 +21,4 @@ function openNav() {
         images[i].style.display = 'none';
     };
 }
+

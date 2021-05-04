@@ -198,6 +198,17 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: #9a9881;
 }
 
+#sliderMessage {
+  position: fixed;
+  top: 85px;
+  font-size: 0.75em;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #9a9881;
+  border-radius: 15px;
+  display: none;
+}
+
 input[type="text"] {
   width: 100%;
   font-family: mondwest, serif;

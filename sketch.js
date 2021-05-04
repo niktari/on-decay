@@ -47,8 +47,8 @@ function setup()
 	about.class('button right');
 	about.mousePressed(openNav);
 
-	growth_value = 0.01;
-	growth_slider = createSlider(0.01, 0.4, 0.01, 0.01);
+	growth_value = 3.3;
+	growth_slider = createSlider(3.3, 4.5, 3.3, 0.1);
 	growth_slider.parent('growthSlider');
 	growth_slider.input(growthChange);
 
@@ -94,9 +94,9 @@ function drawText(){
 
 	type_width = textWidth(type_value);
 
-	textArray = formula.textToPoints(type_value, windowWidth/2 - type_width/2, windowHeight/1.5, fontSize, {sampleFactor: growth_value});
+	textArray = formula.textToPoints(type_value, windowWidth/2 - type_width/2, windowHeight/1.5, fontSize, {sampleFactor: .25});
 
-	textArray2 = formula.textToPoints(type_value, windowWidth/2 - type_width/2, windowHeight/1.5, fontSize, {sampleFactor: .25});
+	// textArray2 = formula.textToPoints(type_value, windowWidth/2 - type_width/2, windowHeight/1.5, fontSize, {sampleFactor: .25});
 
 
 }
@@ -113,20 +113,26 @@ function drawGrowth(){
 
 		stroke(random(h1, h2), random(s1, s2), random(b1, b2), random(a1, a2));
 	
-		stepGrowth(4, i);
+		stepGrowth(growth_value, i);
 	}
 
-	beginShape();
 
-	for(let i = 0; i < textArray2.length; i++){
 
-		stroke(random(h1, h2), random(s1, s2), random(b1, b2), random(a1, a2));
+	// for(let i = 0; i < textArray2.length; i++){
 
-		ellipse(textArray2[i].x + (noise(i * .2) * 5), textArray2[i].y + (noise(i * .2) * 5), 1, 1);
+	// 	stroke(random(h1, h2), random(s1, s2), random(b1, b2), random(a1, a2));
 
-	}
+	// 	push();
 
-	endShape(CLOSE);
+	// 	// rect(textArray2[i].x + (noise(i * .2) * 5), textArray2[i].y + (noise(i * .2) * 5), 1, 1);
+
+	// 	line(textArray2[i].x + (noise(i * .2) * 5), textArray2[i].y + + (noise(i * .2) * 5), textArray2[i].x + random(5), textArray2[i].y + random(3));
+
+	// 	pop();
+
+	// }
+
+
 
 }
 
@@ -195,6 +201,7 @@ function typeChange() {
   }
 
 function growthChange() {
+
 	growth_value = growth_slider.value();
 
 	draw();
@@ -266,3 +273,18 @@ function saveImage(){
 	saveCanvas('another-form', 'png');
 
 }
+
+let slider_message = document.getElementById('sliderMessage');
+
+growthSlider.onmouseover = function(){
+
+	slider_message.style.display = 'block';
+  
+  }
+  
+  
+  growthSlider.onmouseleave = function(){
+  
+	slider_message.style.display = 'none';
+  
+  }
