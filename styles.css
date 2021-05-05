@@ -257,7 +257,8 @@ input[type="text"]:focus {
 }
 
 .sidenav p a,
-.sidenav li a {
+.sidenav li a,
+.sidenav h2 a {
   border-bottom: 1px dotted #a7ce00;
 }
 
