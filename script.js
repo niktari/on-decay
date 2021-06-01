@@ -1,8 +1,8 @@
 let links = document.querySelectorAll('#about a');
 let images = document.querySelectorAll('#photos img');
+let slider_message = document.getElementById('sliderMessage');
 
 let growthRange = document.querySelector('range');
-
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "35%";
@@ -21,4 +21,18 @@ function openNav() {
         images[i].style.display = 'none';
     };
 }
+
+//// growth message
+
+growthSlider.onmouseover = function(){
+
+	slider_message.style.display = 'block';
+  
+  }
+  
+  growthSlider.onmouseleave = function(){
+  
+	slider_message.style.display = 'none';
+  
+  }
 
