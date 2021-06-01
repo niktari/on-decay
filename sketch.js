@@ -94,6 +94,7 @@ function update() {
 }
 
 function draw() {
+
   drawBranches(makeTextPoints());
 }
 
@@ -123,9 +124,10 @@ function drawBranches(textPoints) {
 
   // loop through each point in the array and draw a branch
   let i;
+
   for (
     i = currentBranch;
-    i < currentBranch + 10 && i < textPoints.length;
+    i < textPoints.length;
     i++
   ) {
     myTurtle.penUp();
@@ -136,10 +138,13 @@ function drawBranches(textPoints) {
 
     drawBranch(growth_value, i);
   }
+
   currentBranch = i;
+
   if (currentBranch > textPoints.length) {
     noLoop();
   }
+  
 }
 
 //// creates a branch
