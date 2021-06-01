@@ -1,120 +1,146 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		
-		<!-- Primary Meta Tags -->
-		<title>Other Forms</title>
-		<meta name="title" content="Other Forms">
-		<meta name="description" content="Other Forms is a project that explores the generative potential of mold, rot, and decay through typographic form. Designed and developed by Nikki Makagiansar.">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16">
-		
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://niktari.github.io/other-forms/">
-		<meta property="og:title" content="Other Forms">
-		<meta property="og:description" content="Other Forms is a project that explores the generative potential of mold, rot, and decay through typographic form. Designed and developed by Nikki Makagiansar.">
-		<meta property="og:image" content="images/og-image.jpg">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:url" content="https://niktari.github.io/other-forms/">
-		<meta property="twitter:title" content="Other Forms">
-		<meta property="twitter:description" content="Other Forms is a project that explores the generative potential of mold, rot, and decay through typographic form. Designed and developed by Nikki Makagiansar.">
-		<meta property="twitter:image" content="images/og-image.jpg">
+    <!-- Primary Meta Tags -->
+    <title>Other Forms</title>
+    <meta name="title" content="Other Forms" />
+    <meta
+      name="description"
+      content="Other Forms is a project that explores the generative potential of mold, rot, and decay through typographic form. Designed and developed by Nikki Makagiansar."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16" />
 
-		
-		
-		<link rel="stylesheet" href="styles.css">
-	</head>
-	<body>
-		<!--[if lt IE 7]>
-			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-		<![endif]-->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://niktari.github.io/other-forms/" />
+    <meta property="og:title" content="Other Forms" />
+    <meta
+      property="og:description"
+      content="Other Forms is a project that explores the generative potential of mold, rot, and decay through typographic form. Designed and developed by Nikki Makagiansar."
+    />
+    <meta property="og:image" content="images/og-image.jpg" />
 
-	<div id="message">
-		<p>Other Forms is a project that explores the generative potential of mold, rot, and decay through typographic form.</p>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://niktari.github.io/other-forms/"
+    />
+    <meta property="twitter:title" content="Other Forms" />
+    <meta
+      property="twitter:description"
+      content="Other Forms is a project that explores the generative potential of mold, rot, and decay through typographic form. Designed and developed by Nikki Makagiansar."
+    />
+    <meta property="twitter:image" content="images/og-image.jpg" />
 
-		<p>Please expand your browser or visit the site on a larger device for the best experience.</p>
-	</div>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
 
+    <div id="message">
+      <p>
+        Other Forms is a project that explores the generative potential of mold,
+        rot, and decay through typographic form.
+      </p>
 
+      <p>
+        Please expand your browser or visit the site on a larger device for the
+        best experience.
+      </p>
+    </div>
 
+    <div id="topContainer">
+      <div id="typeInput"></div>
 
+      <div id="growthSlider">
+        <p id="growthTitle">Growth</p>
+        <div id="sliderMessage">Higher growth may take a moment to render.</div>
+      </div>
+    </div>
 
+    <div id="bottomContainer">
+      <div id="strokeButtons"></div>
 
+      <div id="aboutButtons"></div>
+    </div>
 
-	<div id="topContainer">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
 
-	<div id="typeInput"></div>
+      <div id="about">
+        <p>
+          Other Forms is a project that explores the generative potential of
+          mold, rot, and decay through typographic form.
+        </p>
+        <p>
+          The current growth settings are inspired by
+          <a id="slime_link" href="javascript:void(0)">slime mold</a>,
+          <a href="javascript:void(0)">reindeer lichen</a>, and
+          <a href="javascript:void(0)">coral fungus.</a>
+        </p>
+      </div>
 
-	<div id="growthSlider">
-		<p id="growthTitle">Growth</p>
-		<div id="sliderMessage">Higher growth may take a moment to render.</div>
-	</div>
+      <div id="photos">
+        <img id="slime" src="images/slime.jpg" />
+        <img src="images/reindeer.jpg" />
+        <img src="images/coral.jpg" />
+      </div>
 
-	</div>
+      <div id="colophon">
+        <h2>Colophon</h2>
+        <ul>
+          <li>
+            <a href="https://compform.net/turtles/" target="_blank"
+              >Turtle.js Library</a
+            >, Justin Bakse
+          </li>
+          <li>
+            <a
+              href="https://pangrampangram.com/products/formula-condensed"
+              target="_blank"
+              >Formula Condensed</a
+            >, Pangram Pangram
+          </li>
+          <li>
+            <a
+              href="https://pangrampangram.com/products/bitmap-fonts?variant=32840636858422"
+              target="_blank"
+              >Mondwest</a
+            >, Pangram Pangram
+          </li>
+        </ul>
 
+        <h2>
+          Designed & developed by
+          <a target="_blank" href="https://niktari.com/">Nikki Makagiansar</a>
+        </h2>
+      </div>
+    </div>
 
-
-
-
-	<div id="bottomContainer">
-
-		<div id="strokeButtons">
-
-		</div>
-
-		<div id="aboutButtons"></div>
-
-	</div>
-
-
-
-
-
-	<div id="mySidenav" class="sidenav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-		<div id="about">
-		<p>Other Forms is a project that explores the generative potential of mold, rot, and decay through typographic form.</p>
-		<p>The current growth settings are inspired by <a id="slime_link" href="javascript:void(0)">slime mold</a>, <a href="javascript:void(0)">reindeer lichen</a>, and <a href="javascript:void(0)">coral fungus.</a></p>
-		</div>
-
-		<div id="photos">
-			<img id="slime" src="images/slime.jpg">
-			<img src="images/reindeer.jpg">
-			<img src="images/coral.jpg">
-		</div>
-
-		<div id="colophon">
-		<h2>Colophon</h2>
-		<ul>
-		<li><a href="https://compform.net/turtles/" target="_blank">Turtle.js Library</a>, Justin Bakse</li>
-		<li><a href="https://pangrampangram.com/products/formula-condensed" target="_blank">Formula Condensed</a>, Pangram Pangram</li>
-		<li><a href="https://pangrampangram.com/products/bitmap-fonts?variant=32840636858422" target="_blank">Mondwest</a>, Pangram Pangram</li>
-		</ul>
-
-		<h2>Designed & developed by <a target="_blank" href="https://niktari.com/">Nikki Makagiansar</a></h2>
-		</div>
-
-
-		
-	  </div>
-	  
-
-		
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<script src="turtle.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-		<script src="script.js"></script>
-		<script src="sketch.js" async defer></script>
-	</body>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="turtle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="script.js"></script>
+    <script src="sketch.js" async defer></script>
+  </body>
 </html>
