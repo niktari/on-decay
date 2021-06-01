@@ -122,6 +122,7 @@ function drawBranch(){
 
 	strokeWeight(1);
 
+	// loop through each point in the array and draw a branch
 	for(let i = 0; i < textArray.length; i++){
 
 		myTurtle.penUp();
